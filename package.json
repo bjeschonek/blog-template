@@ -1,0 +1,24 @@
+{
+  "name": "blog-template",
+  "version": "0.0.1",
+  "description": "Base template for blogs using 11ty.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjeschonek/blog-template.git"
+  },
+  "keywords": [],
+  "author": "Brad Jeschonek",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bjeschonek/blog-template/issues"
+  },
+  "homepage": "https://github.com/bjeschonek/blog-template#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
