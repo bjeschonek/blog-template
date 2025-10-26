@@ -4,7 +4,8 @@
   "description": "Base template for blogs using 11ty.",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy"
   },
   "repository": {
     "type": "git",
