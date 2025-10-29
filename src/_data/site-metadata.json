@@ -1,0 +1,12 @@
+{
+    "title": "Blog Template",
+    "url": "https://pages.github.io",
+    "language": "en",
+    "description": "Blog template built using 11ty",
+    "author": {
+        "authorName": "Blog",
+        "authorEmail": "fakeemail@fakeemail.com"
+    },
+    "image": "no image",
+    "feedUrl": "no feed yet"
+}

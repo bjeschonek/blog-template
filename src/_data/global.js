@@ -1,6 +1,6 @@
-// Sets random string of digits to use on pages as an asset hash
+// Creates a random string of digits to be used as an asset hash on pages everytime page builds
 module.exports = {
-    random() {
+    randomHash() {
         function segment() {
             return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
         };
