@@ -1,13 +1,13 @@
 {% set assetHash = global.random() %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site-metadata.language }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% include "partials/meta-info.html" %}
 
-    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml"/>
+    <link rel="alternate" type="application/rss+xml" href="{{ site-metadata.url }}/feed.xml"/>
     
     <!-- <style>{% include "css/critical.css %}</style> -->
 

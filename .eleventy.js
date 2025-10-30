@@ -1,6 +1,4 @@
-module.exports = (config) => {
-    // Passthrough Directories
-    config.addPassthroughCopy('./src/images/');
+module.exports = (eleventyConfig) => {
 
     // Tell 11ty to use the .eleventyignore instead of .gitignore
     config.setUseGitIgnore(false);
@@ -10,7 +8,8 @@ module.exports = (config) => {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
-        // Input and output folder names
+
+        // Changing default input and output folder names
         dir: {
             input: 'src',
             output: 'dist',

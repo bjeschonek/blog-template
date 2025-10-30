@@ -1,11 +1,12 @@
 {
-    "title": "Blog Template",
-    "url": "https://pages.github.io",
+    "title": "11ty Blog Template",
+    "url": "https://github.com/bjeschonek/blog-template",
     "language": "en",
     "description": "Blog template built using 11ty",
     "author": {
         "authorName": "Blog",
-        "authorEmail": "fakeemail@fakeemail.com"
+        "authorEmail": "fakeemail@fakeemail.com",
+        "authorUrl": "none"
     },
     "image": "no image",
     "feedUrl": "no feed yet"
