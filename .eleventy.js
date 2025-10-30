@@ -4,7 +4,7 @@ module.exports = (eleventyConfig) => {
     config.setUseGitIgnore(false);
 
     return {
-        // Allows use of .html files instead of .njk
+        // Allows use of Nunjucks within .html files instead of .njk files
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
         htmlTemplateEngine: 'njk',
