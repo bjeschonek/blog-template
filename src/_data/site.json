@@ -2,9 +2,10 @@
     "title": "11ty Blog Template",
     "url": "https://github.com/bjeschonek/blog-template",
     "language": "en",
+    "locale": "en-us",
     "description": "Blog template built using 11ty",
     "author": {
-        "authorName": "Blog",
+        "authorName": "Brad",
         "authorEmail": "fakeemail@fakeemail.com",
         "authorUrl": "none"
     },
