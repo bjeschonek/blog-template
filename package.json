@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/bjeschonek/blog-template.git"
   },
-  "keywords": [],
   "author": "Brad Jeschonek",
   "license": "MIT",
   "type": "commonjs",
