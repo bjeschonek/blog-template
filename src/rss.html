@@ -1,0 +1,15 @@
+---
+title: 'Blog'
+summary: 'A feed of the latest posts from the blog.'
+permalink: '/feed.xml'
+eleventyExcludeFromCollections: truncate
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ title }}</title>
+    <subtitle>{{ summary }}</subtitle>
+    <link href="{{ site.url }}{{ permalink }}" rel="self">
+    <link href="{{ site.url }}/"/>
+    <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+</feed>
