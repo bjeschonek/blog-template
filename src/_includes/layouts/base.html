@@ -5,12 +5,17 @@
     <!-- Add CSS -->
 </head>
 <body>
-    {% include "partials/header.html" %}
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" role="banner">
+        {% include "partials/header.html" %}
+    </header>
     <main tabindex="-1" id="main-content">
         {% block content %}
         {% endblock %}
     </main>
-    {% include "partials/footer.html" %}
+    <footer role="content-info">
+        {% include "partials/footer.html" %}
+    </footer>
     <!-- Add JS -->
 </body>
 </html>
