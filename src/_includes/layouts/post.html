@@ -1,5 +1,18 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
+    <article class="post">
+        <header class="post__header">
+            <h1>{{ title }}</h1>
+            <div class="post__details">
+                <time datetime=""></time>
+                <span> | {{ content | readingTime }} read.</span>
+            </div>
+        </header>
 
+        <div class="page-content">
+            {{ content | safe }}
+        </div>
+        
+    </article>
 {% endblock %}
