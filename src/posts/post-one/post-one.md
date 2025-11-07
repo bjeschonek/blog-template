@@ -1,7 +1,7 @@
 ---
 title: 'Post one'
 author: 'author'
-date: 'date'
+date: '2020-04-01'
 tags: ['posts', 'featured']
 ---
 

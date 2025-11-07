@@ -20,6 +20,11 @@ module.exports = (eleventyConfig) => {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
     });
 
+    // Collections
+    eleventyConfig.addCollection('blog', (collection) => {
+        return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
+    });
+
     return {
         // Defines template engines, allows for use of .html files instead of .njk
         markdownTemplateEngine: 'njk',

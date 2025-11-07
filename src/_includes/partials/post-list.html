@@ -1,0 +1,11 @@
+<div id="post-list" class="wrapper">
+    <ol class="post-list">
+        {% for post in postList %}
+            {% set date = post.date %}
+            {% set postLength = post %}
+            <li class="post-list__item">
+                {% include "partials/post-meta.html" %}
+            </li>
+        {% endfor %}
+    </ol>
+</div>
