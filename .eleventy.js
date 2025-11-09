@@ -6,6 +6,7 @@ const createReadableDate = require('./src/utils/filters/createReadableDate.js');
 const htmlDateString = require('./src/utils/filters/htmlDateString.js');
 const excerpt = require('./src/utils/filters/excerpt.js');
 const limitPosts = require('./src/utils/filters/limitPosts.js');
+const dateToIso = require('./src/utils/filters/dateToIso.js');
 
 module.exports = (eleventyConfig) => {
     // Plugins
@@ -20,6 +21,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('excerpt', excerpt);
     eleventyConfig.addFilter('limitPosts', limitPosts);
+    eleventyConfig.addFilter('dateToIso', dateToIso);
 
     // Collections
     eleventyConfig.addCollection('blog', (collection) => {
