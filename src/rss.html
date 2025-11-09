@@ -1,5 +1,5 @@
 ---
-title: 'Blog'
+title: 'Blog Name Feed'
 summary: 'A feed of the latest posts from the blog.'
 permalink: '/feed.xml'
 eleventyExcludeFromCollections: true
@@ -11,15 +11,15 @@ eleventyExcludeFromCollections: true
     <subtitle>{{ summary }}</subtitle>
     <link href="{{ site.url }}{{ permalink }}" rel="self">
     <link href="{{ site.url }}/"/>
-    {% if collections.posts %}
-    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+    {% if collections.blog %}
+    <updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
     {% endif %}
     <id>{{ site.url }}</id>
     <author>
         <name>{{ site.author.name }}</name>
         <email>{{ site.author.email }}</email>
     </author>
-    {% for post in collections.post | reverse %}
+    {% for post in collections.blog | reverse %}
         {% set absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endset %}
         <entry>
             <title>{{ post.data.title }}</title>
