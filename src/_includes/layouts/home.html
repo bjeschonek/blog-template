@@ -1,6 +1,12 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
+<header>
+    <!-- Add search functionality -->
+</header>
+<section>
+    {{ content | safe }}
+</section>
 <section>
     <h2>Recent Posts</h2>
     {% set postList = collections.blog | limitPosts(5) %}
