@@ -1,7 +1,11 @@
-const { DateTime } = require('luxon');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const readingTime = require('eleventy-plugin-reading-time');
 
+// Import Filters
+const createReadableDate = require('./src/utils/filters/createReadableDate.js');
+const htmlDateString = require('./src/utils/filters/htmlDateString.js');
+const excerpt = require('./src/utils/filters/excerpt.js');
+const limitPosts = require('./src/utils/filters/limitPosts.js');
 
 module.exports = (eleventyConfig) => {
     // Plugins
@@ -11,14 +15,11 @@ module.exports = (eleventyConfig) => {
     // Tell 11ty to use .eleventyignore instead of .gitignore
     eleventyConfig.setUseGitIgnore(false);
 
-    // Custom Filters
-    eleventyConfig.addFilter('createReadableDate', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('LLL dd yyyy');
-    });
-
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
-    });
+    // Add Filters
+    eleventyConfig.addFilter('createReadableDate', createReadableDate);
+    eleventyConfig.addFilter('htmlDateString', htmlDateString);
+    eleventyConfig.addFilter('excerpt', excerpt);
+    eleventyConfig.addFilter('limitPosts', limitPosts);
 
     // Collections
     eleventyConfig.addCollection('blog', (collection) => {

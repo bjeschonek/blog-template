@@ -1,10 +1,22 @@
 {% extends "layouts/base.html" %}
 
-<!-- {# set postList = pagination.items #} -->
+{% set pageTitle = title %}
+{% set postList = pagination.items %}
+
+{# If this is a tag, get those posts as one large collection. #}
+{% if tag %}
+    {% set postList = collections[tag] %}
+    {% set pageTitle = 'Posts filed under "' + tag + '"' %}
+{% endif %}
 
 {% block content %}
-    <article>
-        <h1>All Blog Posts</h1>
-        {% include "partials/post-list.html" %}
-    </article>
+<article>
+    <h1>{{ pageTitle }}</h1>
+    {% include "partials/post-list.html", context: "blog" %}
+
+    {# Exclude pagination for tags #}
+    {% if not tag %}
+        {% include "partials/pagination.html" %}
+    {% endif %}
+</article>
 {% endblock %}

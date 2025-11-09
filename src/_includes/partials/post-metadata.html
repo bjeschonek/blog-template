@@ -1,6 +1,6 @@
-<div class="post__details">
+<div class="post__meta">
     <time datetime="{{ date | htmlDateString }}">
         {{ date | createReadableDate }}
     </time>
-    <span> | {{ postLength | readingTime }} read.</span>
+    <span> | {{ postContent | readingTime }} read.</span>
 </div>

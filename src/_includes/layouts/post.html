@@ -1,14 +1,24 @@
 {% extends "layouts/base.html" %}
 
+{% set date = page.date %}
+{% set postContent = content %}
+
 {% block content %}
 <article class="post">
     <header class="post__header">
         <h1>{{ title }}</h1>
-        
-        {% set date = page.date %}
-        {% set postLength = content %}
+        {% include "partials/post-metadata.html" %}
 
-        {% include "partials/post-meta.html" %}
+        {% if tags %}
+        <p class="visually-hidden" id="tags-description">Tags this post has been filed under</p>
+        <ul class="tags-list" aria-describedby="tags-description">
+            {% for tag in tags %}
+            <li>
+                <a href="/tag/{{ tag | slugify }}">#{{ tag | title | replace(' ', '') }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </header>
 
     <div class="page-content">

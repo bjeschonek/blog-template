@@ -1,1 +1,9 @@
 {% extends "layouts/base.html" %}
+
+{% block content %}
+<section>
+    <h2>Recent Posts</h2>
+    {% set postList = collections.blog | limitPosts(5) %}
+    {% include "partials/post-list.html" context: "home" %}
+</section>
+{% endblock %}
