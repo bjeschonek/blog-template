@@ -2,11 +2,11 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const readingTime = require('eleventy-plugin-reading-time');
 
 // Import Filters
-const createReadableDate = require('./src/utils/filters/createReadableDate.js');
-const htmlDateString = require('./src/utils/filters/htmlDateString.js');
-const excerpt = require('./src/utils/filters/excerpt.js');
-const limitPosts = require('./src/utils/filters/limitPosts.js');
-const dateToIso = require('./src/utils/filters/dateToIso.js');
+const createReadableDate = require('./utils/filters/createReadableDate.js');
+const htmlDateString = require('./utils/filters/htmlDateString.js');
+const excerpt = require('./utils/filters/excerpt.js');
+const limitPosts = require('./utils/filters/limitPosts.js');
+const dateToIso = require('./utils/filters/dateToIso.js');
 
 module.exports = (eleventyConfig) => {
     // Plugins
