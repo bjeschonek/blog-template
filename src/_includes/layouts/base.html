@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
 <head>
-    {% include "partials/meta.html" %}
+    {% include "partials/meta.html" %} 
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <!-- Add CSS -->
 </head>
 <body>
@@ -17,6 +18,8 @@
     <footer role="content-info">
         {% include "partials/footer.html" %}
     </footer>
-    <!-- Add JS -->
+    <script type="module" src="{{ '/assets/js/main.js' | url }}"></script>
+    <!-- Possibly defer pagefind and move onload to main.js? -->
+    <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search' })"></script>
 </body>
 </html>
