@@ -7,4 +7,5 @@ layout: "layouts/home.html"
 2. Add search functionality for blog, home, and 404
 3. Add Vite to handle CSS, JS, images, other assets, etc
 4. Add Basic CSS for styling
-5. What else?
+5. Passthroughs for public, src/assets folders?
+6. What else?
