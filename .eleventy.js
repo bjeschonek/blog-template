@@ -1,4 +1,3 @@
-// Import Plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const readingTime = require('eleventy-plugin-reading-time');
 const eleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
@@ -9,13 +8,24 @@ const htmlDateString = require('./utils/filters/htmlDateString.js');
 const excerpt = require('./utils/filters/excerpt.js');
 const limitPosts = require('./utils/filters/limitPosts.js');
 const dateToIso = require('./utils/filters/dateToIso.js');
+const cssmin = require('./utils/filters/cssmin.js');
 
 module.exports = (eleventyConfig) => {
+    // Set passthrough behavior for dev server to save time
+    eleventyConfig.setServerPassthroughCopyBehavior('copy');
+
+    // Set passthrough for directories/files
+    // Public, assets/css, and assets/js contain files to be handled separately from 11ty
+    eleventyConfig.addPassthroughCopy('public');
+    eleventyConfig.addPassthroughCopy('src/assets/css');
+    eleventyConfig.addPassthroughCopy('src/assets/js');
+
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(eleventyVitePlugin, {
         tempFolderName: '.11ty-vite',
+        // Equivalence of vite.config.js
         viteOptions: {
             publicDir: 'public',
             server: {
@@ -39,7 +49,7 @@ module.exports = (eleventyConfig) => {
         }
     });
     
-    // Tell 11ty to use .eleventyignore instead of .gitignore
+    // Direct 11ty to use .eleventyignore instead of .gitignore
     eleventyConfig.setUseGitIgnore(false);
 
     // Add Filters
@@ -48,22 +58,28 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addFilter('excerpt', excerpt);
     eleventyConfig.addFilter('limitPosts', limitPosts);
     eleventyConfig.addFilter('dateToIso', dateToIso);
+    eleventyConfig.addFilter('cssmin', cssmin);
 
-    // Collections
+    // Collection Definitions
     eleventyConfig.addCollection('blog', (collection) => {
+        // Returns a copy of the collection reversed
         return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
     });
 
     return {
-        // Defines template engines, allows for use of .html files instead of .njk
+        // Defining template engines
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
+        // Allows use of .html files for layouts/partials instead of .njk
         htmlTemplateEngine: 'njk',
 
-        // Renames input and output directories
+        // Define input and output directory names - using defaults here
         dir: {
             input: 'src',
-            output: 'dist',
+            // Do not use "dist" for output if Vite's output is set to "dist"
+            output: '_site',
+            includes: '_includes',
+            data: '_data'
         },
     };
 };
