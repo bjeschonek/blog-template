@@ -2,15 +2,6 @@
 <html lang="{{ site.lang }}">
 <head>
     {% include "partials/meta.html" %}
-
-    <!-- Styles -->
-    {% set css %}
-        {% include "css/critical.css" %}
-    {% endset %}
-
-    <style>
-        {{ css | cssmin | safe }}
-    </style>
     
     <link rel="stylesheet" href="assets/css/main.css">
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">

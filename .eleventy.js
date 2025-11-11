@@ -8,7 +8,6 @@ const htmlDateString = require('./utils/filters/htmlDateString.js');
 const excerpt = require('./utils/filters/excerpt.js');
 const limitPosts = require('./utils/filters/limitPosts.js');
 const dateToIso = require('./utils/filters/dateToIso.js');
-const cssmin = require('./utils/filters/cssmin.js');
 
 module.exports = (eleventyConfig) => {
     // Set passthrough behavior for dev server to save time
@@ -58,7 +57,6 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addFilter('excerpt', excerpt);
     eleventyConfig.addFilter('limitPosts', limitPosts);
     eleventyConfig.addFilter('dateToIso', dateToIso);
-    eleventyConfig.addFilter('cssmin', cssmin);
 
     // Collection Definitions
     eleventyConfig.addCollection('blog', (collection) => {
