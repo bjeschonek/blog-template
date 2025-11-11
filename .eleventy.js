@@ -22,31 +22,7 @@ module.exports = (eleventyConfig) => {
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(readingTime);
-    eleventyConfig.addPlugin(eleventyVitePlugin, {
-        tempFolderName: '.11ty-vite',
-        // Equivalence of vite.config.js
-        viteOptions: {
-            publicDir: 'public',
-            server: {
-                mode: 'development',
-                middlewareMode: true
-            },
-            appType: 'custom',
-            assetsInclude: ['**/*.xml', '**/*.txt'],
-            build: {
-                mode: 'production',
-                sourcemap: true,
-                manifest: true,
-                rollupOptions: {
-                    output: {
-                        assetFileNames: 'assets/css/main.[hash].css',
-                        chunkFileNames: 'assets/js/[name].[hash].js',
-                        entryFileNames: 'assets/js/[name].[hash].js'
-                    }
-                }
-            }
-        }
-    });
+    eleventyConfig.addPlugin(eleventyVitePlugin);
     
     // Direct 11ty to use .eleventyignore instead of .gitignore
     eleventyConfig.setUseGitIgnore(false);
