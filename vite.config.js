@@ -3,6 +3,7 @@ const tailwindcss = require('@tailwindcss/vite');
 
 module.exports = defineConfig({
     publicDir: 'public',
+    clearScreen: false,
     server: {
         mode: 'development',
         middlewareMode: true
