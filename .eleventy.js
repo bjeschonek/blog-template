@@ -1,3 +1,4 @@
+// Import 11ty Plugins
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const readingTime = require('eleventy-plugin-reading-time');
 const eleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
@@ -13,13 +14,12 @@ module.exports = (eleventyConfig) => {
     // Set passthrough behavior for dev server to save time
     eleventyConfig.setServerPassthroughCopyBehavior('copy');
 
-    // Set passthrough for directories/files
-    // Public, assets/css, and assets/js contain files to be handled separately from 11ty
+    // Passthroughs - public and assets should be handled by Vite
     eleventyConfig.addPassthroughCopy('public');
     eleventyConfig.addPassthroughCopy('src/assets/css');
     eleventyConfig.addPassthroughCopy('src/assets/js');
 
-    // Plugins
+    // Add 11ty Plugins
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(readingTime);
     eleventyConfig.addPlugin(eleventyVitePlugin);
@@ -27,7 +27,7 @@ module.exports = (eleventyConfig) => {
     // Direct 11ty to use .eleventyignore instead of .gitignore
     eleventyConfig.setUseGitIgnore(false);
 
-    // Add Filters
+    // Add Custom Filters
     eleventyConfig.addFilter('createReadableDate', createReadableDate);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('excerpt', excerpt);
@@ -41,7 +41,7 @@ module.exports = (eleventyConfig) => {
     });
 
     return {
-        // Defining template engines
+        // Template engines
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
         // Allows use of .html files for layouts/partials instead of .njk
@@ -50,7 +50,6 @@ module.exports = (eleventyConfig) => {
         // Define input and output directory names - using defaults here
         dir: {
             input: 'src',
-            // Do not use "dist" for output if Vite's output is set to "dist"
             output: '_site',
             includes: '_includes',
             data: '_data'
