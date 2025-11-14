@@ -3,7 +3,7 @@
 <head>
     {% include "partials/meta.html" %}
     
-    <link rel="stylesheet" href="assets/css/main.css">
+    {% vite 'style' %}
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 </head>
 <body>
@@ -19,7 +19,7 @@
     <footer role="content-info">
         {% include "partials/footer.html" %}
     </footer>
-    <script type="module" src="{{ '/assets/js/main.js' | url }}"></script>
+    {% vite 'main' %}
     <!-- Possibly defer pagefind and move onload to main.js? -->
     <script src="/pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search' })"></script>
 </body>
