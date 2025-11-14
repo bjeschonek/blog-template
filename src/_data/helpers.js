@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     /**
      * Gets a random array of posts excluding the current post to provide additional content at the bottom of the page.
      * @param {Array} collection The 11ty collection to generate additional posts from

@@ -1,16 +1,16 @@
 // Import 11ty Plugins
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const readingTime = require('eleventy-plugin-reading-time');
-const eleventyVitePlugin = require('@11ty/eleventy-plugin-vite');
+import rssPlugin from '@11ty/eleventy-plugin-rss';
+import readingTime from 'eleventy-plugin-reading-time';
+import eleventyVitePlugin from '@11ty/eleventy-plugin-vite'
 
 // Import Filters
-const createReadableDate = require('./utils/filters/createReadableDate.js');
-const htmlDateString = require('./utils/filters/htmlDateString.js');
-const excerpt = require('./utils/filters/excerpt.js');
-const limitPosts = require('./utils/filters/limitPosts.js');
-const dateToIso = require('./utils/filters/dateToIso.js');
+import createReadableDate from './utils/filters/createReadableDate.js';
+import htmlDateString from './utils/filters/htmlDateString.js';
+import excerpt from './utils/filters/excerpt.js';
+import limitPosts from './utils/filters/limitPosts.js';
+import dateToIso from './utils/filters/dateToIso.js';
 
-module.exports = (eleventyConfig) => {
+export default function (eleventyConfig) {
     // Set passthrough behavior for dev server to save time
     eleventyConfig.setServerPassthroughCopyBehavior('copy');
 
@@ -44,7 +44,7 @@ module.exports = (eleventyConfig) => {
         // Template engines
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
-        // Allows use of .html files for layouts/partials instead of .njk
+        // .html files can be used for layouts/partials instead of .njk
         htmlTemplateEngine: 'njk',
 
         // Define input and output directory names - using defaults here

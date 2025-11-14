@@ -15,7 +15,7 @@
   },
   "author": "Brad Jeschonek",
   "license": "MIT",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/bjeschonek/blog-template/issues"
   },

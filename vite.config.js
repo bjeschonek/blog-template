@@ -1,7 +1,7 @@
-const { defineConfig } = require('vite');
-const tailwindcss = require('@tailwindcss/vite');
+import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
-module.exports = defineConfig({
+export default defineConfig({
     publicDir: 'public',
     clearScreen: false,
     server: {
