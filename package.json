@@ -1,7 +1,7 @@
 {
   "name": "blog-template",
   "version": "1.1.0",
-  "description": "Base template for blogs using 11ty.",
+  "description": "Template for building a blog with 11ty, using Vite and Tailwind CSS.",
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "luxon": "^3.7.2"
   }
 }
