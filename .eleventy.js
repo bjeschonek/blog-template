@@ -1,38 +1,14 @@
-// Import 11ty Plugins
-import rssPlugin from '@11ty/eleventy-plugin-rss';
-import readingTime from 'eleventy-plugin-reading-time';
-import eleventyVitePlugin from '@11ty/eleventy-plugin-vite'
-
-// Import Filters
-import createReadableDate from './utils/filters/createReadableDate.js';
-import htmlDateString from './utils/filters/htmlDateString.js';
-import excerpt from './utils/filters/excerpt.js';
-import limitPosts from './utils/filters/limitPosts.js';
-import dateToIso from './utils/filters/dateToIso.js';
-
 export default function (eleventyConfig) {
     // Set passthrough behavior for dev server to save time
     eleventyConfig.setServerPassthroughCopyBehavior('copy');
+
+    // Direct 11ty to use .eleventyignore instead of .gitignore
+    eleventyConfig.setUseGitIgnore(false);
 
     // Passthroughs - public and assets should be handled by Vite
     eleventyConfig.addPassthroughCopy('public');
     eleventyConfig.addPassthroughCopy('src/assets/css');
     eleventyConfig.addPassthroughCopy('src/assets/js');
-
-    // Add 11ty Plugins
-    eleventyConfig.addPlugin(rssPlugin);
-    eleventyConfig.addPlugin(readingTime);
-    eleventyConfig.addPlugin(eleventyVitePlugin);
-    
-    // Direct 11ty to use .eleventyignore instead of .gitignore
-    eleventyConfig.setUseGitIgnore(false);
-
-    // Add Custom Filters
-    eleventyConfig.addFilter('createReadableDate', createReadableDate);
-    eleventyConfig.addFilter('htmlDateString', htmlDateString);
-    eleventyConfig.addFilter('excerpt', excerpt);
-    eleventyConfig.addFilter('limitPosts', limitPosts);
-    eleventyConfig.addFilter('dateToIso', dateToIso);
 
     // Collection Definitions
     eleventyConfig.addCollection('blog', (collection) => {
