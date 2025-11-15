@@ -2,6 +2,7 @@
 node_modules/
 packages/
 dist
+_site
 *.log
 *.tmp
 *.temp
