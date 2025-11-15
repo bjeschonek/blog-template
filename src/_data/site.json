@@ -1,0 +1,13 @@
+{
+    "title": "11ty Blog Template with Vite and Tailwind",
+    "url": "https://github.com/bjeschonek/blog-template",
+    "description": "Customizable blog template made with 11ty SSG, Vite, and Tailwind CSS.",
+    "lang": "en",
+    "locale": "en-us",
+    "author": {
+        "name": "Brad Jeschonek",
+        "email": "n/a",
+        "authorUrl": "n/a"
+    },
+    "defaultSocialImage": "n/a"
+}

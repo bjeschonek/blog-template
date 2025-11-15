@@ -22,6 +22,8 @@
   "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "eleventy-plugin-reading-time": "^0.0.1",
     "luxon": "^3.7.2"
   }
 }
