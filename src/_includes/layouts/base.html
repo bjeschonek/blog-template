@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+    <head>
+        {% include "partials/head.html" %}
+    </head>
+    <body>
+        <a href="#main-content">Skip to main content.</a>
+        <header role="banner">
+            <div>
+                <div>
+                    <a href="/" aria-label="{{ site.title }} - Home">
+                        <strong>11ty Blog Template</strong>
+                        <!-- Add Logo SVG -->
+                    </a>
+                    {% include "partials/navigation.html" %}
+                </div>
+            </div>
+        </header>
+        <main id="main-content" tabindex="-1">
+            {{ content | safe }}
+        </main>
+        <footer role="contentinfo">
+            <div class="wrapper footer__inner">
+                <!-- Add footer links, social icons -->
+                <div class="footer__attribution">
+                    <p>Created by Brad, powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty,</a> Visit <a href="https://github.com/bjeschonek/blog-template" target="_blank" rel="noopener noreferrer">Github repo.</a></p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

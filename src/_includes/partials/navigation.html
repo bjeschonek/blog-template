@@ -1,0 +1,17 @@
+<nav role="navigation" aria-label="Primary">
+    <ul>
+        {% for item in navigation.items %}
+            {% set currentAttribute = '' %}
+            {% set externalAttribute = '' %}
+            {% if item.external %}
+                {% set externalAttribute = 'target="blank" rel="noopener noreferrer"' %}
+            {% endif %}
+            {% if page.url === item.url %}
+                {% set currentAttribute = 'aria-current="page" %}
+            {% endif %}
+            <li>
+                <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
