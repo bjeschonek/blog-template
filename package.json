@@ -8,10 +8,10 @@
   "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
+    "start": "del-cli _site && npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
-    "watch": "npx @11ty/eleventy --watch",
+    "watch": "npx @11ty/eleventy --watch --incremental",
     "dryrun": "npx @11ty/eleventy --dryrun",
     "update": "npx @11ty/eleventy --incremental",
     "index": "npx pagefind --site _site",
