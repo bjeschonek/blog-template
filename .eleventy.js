@@ -35,7 +35,7 @@ export default function (eleventyConfig) {
     // Collection Definitions
     eleventyConfig.addCollection('blog', (collection) => {
         // Returns a copy of the collection reversed
-        return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
+        return [...collection.getFilteredByGlob('./src/posts/**/*.md')].reverse();
     });
 
     return {
