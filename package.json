@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "del-cli _site && npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --serve --incremental",
     "build": "npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve",
     "watch": "npx @11ty/eleventy --watch --incremental",
