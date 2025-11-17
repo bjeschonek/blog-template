@@ -12,7 +12,12 @@
                         <strong>11ty Blog Template</strong>
                         <!-- Add Logo SVG -->
                     </a>
-                    {% include "partials/navigation.html" %}
+                    {% if navigation.primary %}
+                        <nav role="navigation" aria-label="Primary">
+                            {% set list = navigation.primary %}
+                            {% include "partials/navigation.html" %}
+                        </nav>
+                    {% endif %}
                 </div>
             </div>
         </header>
@@ -20,12 +25,20 @@
             {{ content | safe }}
         </main>
         <footer role="contentinfo">
-            <div class="wrapper footer__inner">
-                <!-- Add footer links, social icons -->
-                <div class="footer__attribution">
+            <div>
+                {% if navigation.socialLinks %}
+                    {% set list = navigation.socialLinks %}
+                    {% include "partials/navigation.html" %}
+                {% endif %}
+                {% if navigation.footerLinks %}
+                    {% set list = navigation.footerLinks %}
+                    {% include "partials/navigation.html" %}
+                {% endif %}
+                <div>
                     <p>Created by Brad, powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty,</a> Visit <a href="https://github.com/bjeschonek/blog-template" target="_blank" rel="noopener noreferrer">Github repo.</a></p>
                 </div>
             </div>
         </footer>
+        <!-- Add JS -->
     </body>
 </html>

@@ -1,20 +1,68 @@
 {
-    "items": [
+    "primary": [
         {
             "text": "Home",
-            "url": "/"
+            "url": "/",
+            "external": false
         },
         {
             "text": "About",
-            "url": "/about/"
+            "url": "/about/",
+            "external": false
         },
         {
             "text": "Blog",
-            "url": "/blog/"
+            "url": "/blog/",
+            "external": false
         },
         {
             "text": "Contact",
-            "url": "/contact/"
+            "url": "/contact/",
+            "external": false
+        }
+    ],
+    "socialLinks": [
+        {
+            "text": "Instagram",
+            "url": "https://instagram.com",
+            "external": true
+        },
+        {
+            "text": "GitHub",
+            "url": "https://github.com/bjeschonek/blog-template",
+            "external": true
+        },
+        {
+            "text": "Twitter",
+            "url": "https://twitter.com",
+            "external": true
+        }
+    ], 
+    "footerLinks": [
+        {
+            "text": "RSS",
+            "url": "/feed.xml",
+            "external": true
+        }, 
+        {
+            "text": "Terms",
+            "url": "/terms",
+            "external": true
+        }, 
+        {
+            "text": "Accessibility", 
+            "url": "/accessibility",
+            "external": true
+        },
+        {
+            "text": "Privacy Policy",
+            "url": "/privacy",
+            "external": true
+        },
+        {
+            "text": "Affiliate Disclosure",
+            "url": "/affiliate",
+            "external": true
         }
     ]
 }

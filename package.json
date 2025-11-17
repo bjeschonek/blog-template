@@ -1,7 +1,11 @@
 {
   "name": "blog-template",
+  "description": "This is a template for building blogs using 11ty, Vite, and Tailwind CSS.",
   "version": "1.1.0",
-  "description": "Template for building a blog with 11ty, using Vite and Tailwind CSS.",
+  "author": "Brad Jeschonek",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve",
@@ -13,13 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/bjeschonek/blog-template.git"
   },
-  "author": "Brad Jeschonek",
-  "license": "MIT",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/bjeschonek/blog-template/issues"
   },
-  "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
