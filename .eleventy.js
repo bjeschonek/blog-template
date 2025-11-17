@@ -1,6 +1,7 @@
 // Import 11ty Plugins
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import readingTime from 'eleventy-plugin-reading-time';
+import EleventyPluginVite from '@11ty/eleventy-plugin-vite';
 
 // Import Custom Filters
 import createReadableDate from './utils/filters/createReadableDate.js';
@@ -24,6 +25,7 @@ export default function (eleventyConfig) {
     // Add 11ty Plugins
     eleventyConfig.addPlugin(rssPlugin);
     eleventyConfig.addPlugin(readingTime);
+    eleventyConfig.addPlugin(EleventyPluginVite);
 
     // Add Custom Filters
     eleventyConfig.addFilter('createReadableDate', createReadableDate);
