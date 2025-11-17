@@ -1,6 +1,6 @@
 ---
-title: 'All Blog Posts - Archive'
-layout: 'layouts/blog.html'
+title: All Blog Posts - Archive
+layout: layouts/blog.html
 pagination:
     data: collections.blog
     size: 10

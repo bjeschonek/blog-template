@@ -1,5 +1,5 @@
 ---
-layout: "layouts/home.html"
+layout: layouts/home.html
 ---
 # Blog To Do List
 1. Finish basic blog/site components (sitemap, 404, terms, privacy policy, robots, manifest, etc)

@@ -1,0 +1,15 @@
+---
+layout: base.html
+---
+<header>
+    <h1>Welcome to the Blog</h1>
+    <a href="/blog">Read Some Posts</a>
+</header>
+<section>
+    {{ content | safe }}
+</section>
+<section>
+    <h2>Recent Posts</h2>
+    {% set postList = collections.blog | limitPosts(5) %}
+    {% include "partials/post-list.html" %}
+</section>

@@ -1,0 +1,32 @@
+---
+layout: base.html
+---
+{% set date = page.date %}
+{% set postContent = content %}
+{% set additionalPosts = helpers.getAdditionalPosts(collections.blog, page) %}
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+        {% include "partials/post-metadata.html" %}
+        {% if tags %}
+            <p id="tags-description">Tags this post has been filed under.</p>
+            <ul aria-describedby="tags-description">
+                {% for tag in tags %}
+                <li>
+                    <a href="/tag/{{tag | slugify }}">#{{ tag | title | replace(' ', '') }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </header>
+    <div>
+        {{ content | safe }}
+    </div>
+    {% if additionalPosts %}
+    <section>
+        {% set postList = additionalPosts %}
+        <h2>More from the Blog</h2>
+        {% include "partials/post-list.html" %}
+    </section>
+    {% endif %}
+</article>

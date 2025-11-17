@@ -1,0 +1,17 @@
+---
+layout: base.html
+---
+{% set pageTitle = title %}
+{% set postList = pagination.items %}
+{% set context = "blog" %}
+{% if tag %}
+    {% set postList = collections[tag] %}
+    {% set pageTitle = 'Posts filed under "' + tag + '"' %}
+{% endif %}
+<article>
+    <h1>{{ pageTitle }}</h1>
+    {% include "partials/post-list.html" %}
+    {% if not tags %}
+        {% include "partials/pagination.html" %}
+    {% endif %}
+</article>

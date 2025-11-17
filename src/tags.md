@@ -1,6 +1,6 @@
 ---
-title: 'All Tags'
-layout: 'layouts/blog.html'
+title: All Tags
+layout: layouts/blog.html
 pagination:
     data: collections
     size: 1
