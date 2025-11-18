@@ -34,7 +34,6 @@
     "cssnano": "^7.1.2",
     "del-cli": "^7.0.0",
     "eleventy-plugin-reading-time": "^0.0.1",
-    "live-server": "^1.2.2",
     "luxon": "^3.7.2",
     "pagefind": "^1.4.0",
     "tailwindcss": "^4.1.17",
