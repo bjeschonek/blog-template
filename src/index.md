@@ -1,4 +1,5 @@
 ---
+title: Home
 layout: layouts/home.html
 ---
 # Blog To Do List

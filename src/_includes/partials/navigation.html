@@ -1,15 +1,13 @@
-<ul>
-    {% for item in list %}
-        {% set currentAttribute = '' %}
-        {% set externalAttribute = '' %}
-        {% if item.external %}
-            {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-        {% endif %}
-        {% if page.url === item.url %}
-            {% set currentAttribute = 'aria-current="page"' %}
-        {% endif %}
-        <li>
-            <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
-        </li>
-    {% endfor %}
-</ul>
+{% for item in list %}
+    {% set currentAttribute = '' %}
+    {% set externalAttribute = '' %}
+    {% if item.external %}
+        {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+    {% endif %}
+    {% if page.url === item.url %}
+        {% set currentAttribute = 'aria-current="page"' %}
+    {% endif %}
+    <li class="p-2.5">
+        <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
+    </li>
+{% endfor %}
