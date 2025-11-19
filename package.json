@@ -8,14 +8,13 @@
   "homepage": "https://github.com/bjeschonek/blog-template#readme",
   "main": "index.js",
   "scripts": {
-    "start": "del-cli _site && npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve",
-    "watch": "npx @11ty/eleventy --watch --incremental",
-    "dryrun": "npx @11ty/eleventy --dryrun",
-    "update": "npx @11ty/eleventy --incremental",
+    "start": "npm run dev",
+    "clean": "del-cli _site",
     "index": "npx pagefind --site _site",
-    "clean": "del-cli _site"
+    "build": "npx @11ty/eleventy",
+    "build-prod": "npm run clean && npm run build && npm run index",
+    "dev": "npm run build-prod && npx vite serve _site",
+    "dryrun": "npx @11ty/eleventy --dryrun"
   },
   "repository": {
     "type": "git",
@@ -28,7 +27,7 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-vite": "^7.0.0",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/postcss": "^4.1.17",
     "autoprefixer": "^10.4.22",
     "cssnano": "^7.1.2",
     "del-cli": "^7.0.0",
