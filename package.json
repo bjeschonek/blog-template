@@ -13,7 +13,7 @@
     "index": "npx pagefind --site _site",
     "build": "npx @11ty/eleventy",
     "build-prod": "npm run clean && npm run build && npm run index",
-    "dev": "npm build-prod && npx vite serve _site",
+    "dev": "npm run build-prod && npx vite serve _site",
     "dryrun": "npx @11ty/eleventy --dryrun"
   },
   "repository": {
