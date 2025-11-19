@@ -1,20 +1,23 @@
 <div id="post-list">
-    <ol>
+    <ol class="flex flex-col items-center">
         {% for post in postList %}
             {% set date = post.date %}
             {% set postContent = post %}
-            <li>
-                {% include "partials/post-metadata.html" %}
-                {% if context == "blog" %}
-                <h2>
-                    <a href="{{ post.url }}">{{ post.data.title }}</a>
-                </h2>
-                {% endif %}
-                <h3>
-                    <a href="{{ post.url }}">{{ post.data.title }}</a>
-                </h3>
-                <p>{{ post.templateContent | excerpt | safe }}</p>
-                <a href="{{ post.url }}">read article.</a>
+            <li class="flex items-center p-6 border border-gray-400 rounded-md shadow-xs mb-4 max-w-lx">
+                <img src="" alt="" class="object-cover w-full rounded-2xl h-auto">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    {% if context == "blog" %}
+                    <h2 class="mb-2 font-bold tracking-tight">
+                        <a href="{{ post.url }}">{{ post.data.title }}</a>
+                    </h2>
+                    {% endif %}
+                    <h3 class="mb-2 font-bold tracking-tight">
+                        <a href="{{ post.url }}">{{ post.data.title }}</a>
+                    </h3>
+                    {% include "partials/post-metadata.html" %}
+                    <p class="mb-6">{{ post.templateContent | excerpt | safe }}</p>
+                    <a href="{{ post.url }}" class="inline-flex font-medium items-center text-blue-500 hover:underline">Read Article</a>
+                </div>
             </li>
         {% endfor %}
     </ol>
