@@ -45,14 +45,14 @@
         {% endif %}
     </head>
     <body class="bg-gray-50 text-gray-900">
-        <a href="#main-content" class="bg-gray-700 text-white absolute left-0 top-0 p-2 z-50 transform -translate-y-full focus:translate-y-0 transition">Skip to content</a>
+        <a href="#main-content" class="bg-blue-400 text-white absolute left-0 top-0 p-2 z-50 transform -translate-y-full focus:translate-y-0 transition">Skip to content</a>
         <header>
             <nav class="w-full">
                 <div class="flex flex-wrap flex-col md:flex-row items-center justify-between mx-auto p-4">
                     <a href="/" aria-label="{{ site.title }} - Home">
                         <span class="text-lg font-semibold whitespace-nowrap">11ty Blog Template</span>
                     </a>
-                    <ul class="font-medium flex justify-items-start space-x-6 lg:space-x-8">
+                    <ul class="font-medium flex space-x-6">
                         {% set list = navigation.primary %}
                         {% include "partials/navigation.html" %}
                     </ul>
