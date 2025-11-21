@@ -1,6 +1,7 @@
-<div>
+<div class="flex items-center gap-x-4 text-xs">
     <time datetime="{{ date | htmlDateString }}">
         {{ date | createReadableDate }}
     </time>
-    <span> | {{ postContent | readingTime }} read.</span>
+    <span> | </span>
+    <span>{{ postContent | readingTime }} read</span>
 </div>

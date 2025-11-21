@@ -21,6 +21,8 @@ layout: layouts/base.html
         <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">Recent posts from the blog</h2>
         <p class="mt-2 text-lg/8">Additional information with subtext for the blog recent posts section</p>
     </div>
+    <div class="mx-auto mt-10 max-w-2xl pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
     {% set postList = collections.blog | limitPosts(5) %}
     {% include "partials/post-list.html" %}
+    </div>
 </section>
