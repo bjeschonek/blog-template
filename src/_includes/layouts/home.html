@@ -1,12 +1,12 @@
 ---
 layout: layouts/base.html
 ---
-<header>
-    <h1>Welcome to the Blog</h1>
-    <a href="/blog">Read Some Posts</a>
-</header>
-<section>
-    {{ content | safe }}
+<section class="px-6 lg:px-8 mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center">
+    <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl">{{ heroTitle }}</h1>
+    <p class="mt-8 text-lg font-medium text-pretty sm:text-xl/8">{{ heroText }}</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+        <div id="search"></div>
+    </div>
 </section>
 <section>
     <h2>Recent Posts</h2>

@@ -1,15 +1,13 @@
 {% for item in list %}
     {% set currentAttribute = '' %}
     {% set externalAttribute = '' %}
-    {% set linkStyle = 'class="block p-2 hover:text-blue-400"' %}
     {% if item.external %}
         {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
     {% endif %}
     {% if page.url === item.url %}
         {% set currentAttribute = 'aria-current="page"' %}
-        {% set linkStyle = 'class="block p-2 text-blue-400"' %}
     {% endif %}
     <li>
-        <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }} {{ linkStyle | safe }}>{{ item.text }}</a>
+        <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }} class="block p-2 hover:text-emerald-800">{{ item.text }}</a>
     </li>
 {% endfor %}

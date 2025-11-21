@@ -52,12 +52,10 @@
                 <a href="/" aria-label="{{ site.title }} - Home">
                     <span class="text-lg font-semibold whitespace-nowrap">11ty Blog Template</span>
                 </a>
-                <div class="bg-zinc-300 md:bg-zinc-200 py-2 fixed bottom-0 md:bottom-auto md:static w-full">
-                    <ul class="font-medium flex justify-center space-x-6 md:justify-end">
-                        {% set list = navigation.primary %}
-                        {% include "partials/navigation.html" %}
-                    </ul>
-                </div>
+                <ul class="font-medium flex justify-center space-x-6 md:justify-end">
+                    {% set list = navigation.primary %}
+                    {% include "partials/navigation.html" %}
+                </ul>
             </nav>
         </header>
         <main id="main-content" tabindex="-1">
