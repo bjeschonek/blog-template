@@ -8,8 +8,11 @@ layout: layouts/base.html
         <div id="search"></div>
     </div>
 </section>
-<section>
-    <h2>Recent Posts</h2>
+<section class="py-24 sm:py-32 mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">Recent posts from the blog</h2>
+        <p class="mt-2 text-lg/8">Additional information with subtext for the blog recent posts section</p>
+    </div>
     {% set postList = collections.blog | limitPosts(5) %}
     {% include "partials/post-list.html" %}
 </section>
