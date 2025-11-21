@@ -8,6 +8,6 @@
         {% set currentAttribute = 'aria-current="page"' %}
     {% endif %}
     <li>
-        <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }} class="block p-2 hover:text-emerald-800">{{ item.text }}</a>
+        <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }} class="block p-2 hover:text-emerald-800 hover:underline">{{ item.text }}</a>
     </li>
 {% endfor %}

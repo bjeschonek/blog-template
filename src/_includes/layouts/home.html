@@ -5,7 +5,15 @@ layout: layouts/base.html
     <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl">{{ heroTitle }}</h1>
     <p class="mt-8 text-lg font-medium text-pretty sm:text-xl/8">{{ heroText }}</p>
     <div class="mt-10 flex items-center justify-center gap-x-6">
+        {% if heroSearchBar %}
         <div id="search"></div>
+        {% endif %}
+        {% if heroButton %}
+        <a href="{{ heroButton.heroButtonLink | url }}" class="rounded-md bg-emerald-950 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">{{ heroButton.heroButtonText }}</a>
+        {% endif %}
+        {% if heroButtonAlt %}
+        <a href="{{ heroButtonAlt.heroButtonAltLink | url }}" class="rounded-md bg-emerald-950 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800">{{ heroButtonAlt.heroButtonAltText }}</a>
+        {% endif %}
     </div>
 </section>
 <section class="py-24 sm:py-32 mx-auto max-w-7xl px-6 lg:px-8">
