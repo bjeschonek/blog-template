@@ -1,11 +1,17 @@
 ---
-title: 404 Not Found
+title: 404 Page Not Found
 permalink: /404.html
 layout: layouts/base.html
 eleventyExcludeFromCollections: true
 ---
-<div>
-    <h1>{{ title }}</h1>
-    <p>Something went wrong and the page you're trying to reach could not be found at this URL. It was likely a broken link.</p>
-    <a href="{{ '/' | url }}">Go Home.</a>
+<div class="px-6 py-24 sm:py-32 lg:px-8 text-center">
+    <h1 class="mt-4 text-5xl font-semibold tracking-tight text-balance sm:text-7xl">{{ title }}</h1>
+    <p class="mt-6 text-lg font-medium text-pretty sm:text-xl/8">Something went wrong and the page you're trying to reach could not be found at this URL. It was likely a broken link.</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="{{ '/' | url }}" class="rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2">Go Home</a>
+        <a href="{{ '/contact' }}" class="text-sm font-semibold">Contact Us<span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="max-w-xl py-8 mx-auto">
+        <div id="search"></div>
+    </div>
 </div>
