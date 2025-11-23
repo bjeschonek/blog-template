@@ -8,10 +8,11 @@ layout: layouts/base.html
     {% set postList = collections[tag] %}
     {% set pageTitle = 'Posts filed under "' + tag + '"' %}
 {% endif %}
-<article>
-    <h1>{{ pageTitle }}</h1>
+<div class="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-30">
+    <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl mb-10">{{ pageTitle }}</h1>
+    <div>{{ content | safe }}</div>
     {% include "partials/post-list.html" %}
     {% if not tags %}
         {% include "partials/pagination.html" %}
     {% endif %}
-</article>
+</div>
