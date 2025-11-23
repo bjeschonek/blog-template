@@ -12,10 +12,11 @@
                     <h2 class="mt-3 text-lg/6 font-semibold group-hover:text-emerald-950">
                         <a href="{{ post.url }}"><span class="absolute inset-0"></span>{{ post.data.title }}</a>
                     </h2>
-                    {% endif %}
+                    {% else %}
                     <h3 class="mt-3 text-lg/6 font-semibold group-hover:text-emerald-950">
                         <a href="{{ post.url }}"><span class="absolute inset-0"></span>{{ post.data.title }}</a>
                     </h3>
+                    {% endif %}
                     <p class="mt-5 line-clamp-3 text-sm/6">{{ post.templateContent | excerpt | safe }}</p>
                     <div class="relative mt-8 flex items-center gap-x-4 border-t pt-8">
                         <img src="{{ post.data.author.image }}" alt="Image of {{ post.data.author.name }}" class="size-10 rounded-full">

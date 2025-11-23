@@ -10,7 +10,9 @@ layout: layouts/base.html
 {% endif %}
 <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-30">
     <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl mb-10">{{ pageTitle }}</h1>
-    <div>{{ content | safe }}</div>
+    <div class="mt-8 text-lg font-medium text-pretty">
+        {{ content | safe }}
+    </div>
     {% include "partials/post-list.html" %}
     {% if not tags %}
         {% include "partials/pagination.html" %}
