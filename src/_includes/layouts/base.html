@@ -48,7 +48,7 @@
     <body class="bg-zinc-200 text-gray-950">
         <a href="#main-content" class="bg-green-950 text-zinc-200 absolute left-0 top-0 p-2 z-50 transform -translate-y-full focus:translate-y-0 transition">Skip to content</a>
         <header>
-            <nav class="flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto">
+            <nav class="flex items-center justify-between py-6 max-w-7xl mx-auto border-b">
                 <a href="/" aria-label="{{ site.title }} - Home">
                     <span class="text-lg font-semibold whitespace-nowrap">11ty Blog Template</span>
                 </a>
@@ -84,9 +84,9 @@
         <main id="main-content" tabindex="-1">
             {{ content | safe }}
         </main>
-        <footer class="mx-auto w-full max-w-xl lg:max-w-7xl">
-            <div class="flex py-8 justify-between">
-                <div>
+        <footer class="mx-auto w-full max-w-xl lg:max-w-7xl px-6 sm:px-0">
+            <div class="grid grid-cols-3 gap-4 sm:py-6 sm:grid-cols-4 justify-items-start sm:justify-items-center sm:gap-0">
+                <div class="col-span-3 sm:col-span-1">
                     <span class="text-lg font-semibold whitespace-nowrap">11ty Blog Template</span>
                     <p>Short mission statement or something else creative.</p>
                     <div>
@@ -94,21 +94,21 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="mb-6 text-sm font-semibold uppercase">Content</h3>
+                    <h3 class="text-sm font-semibold uppercase underline">Content</h3>
                     <ul>
                         {% set list = navigation.primary %}
                         {% include "partials/navigation.html" %}
                     </ul>
                 </div>
                 <div>
-                    <h3 class="mb-6 text-sm font-semibold uppercase">Social</h3>
+                    <h3 class="text-sm font-semibold uppercase underline">Social</h3>
                     <ul>
                         {% set list = navigation.socialLinks %}
                         {% include "partials/navigation.html" %}
                     </ul>
                 </div>
                 <div>
-                    <h3 class="mb-6 text-sm font-semibold uppercase">RSS & Legal</h3>
+                    <h3 class="text-sm font-semibold uppercase underline">RSS & Legal</h3>
                     <ul>
                         {% set list = navigation.footerLinks %}
                         {% include "partials/navigation.html" %}

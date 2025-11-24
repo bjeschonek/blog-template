@@ -4,28 +4,44 @@ layout: layouts/base.html
 {% set date = page.date %}
 {% set postContent = content %}
 {% set additionalPosts = helpers.getAdditionalPosts(collections.blog, page) %}
-<article class="mx-auto max-w-7xl px-6 lg:px-8 py-32 sm:py-48">
+<article class="mx-auto max-w-7xl px-6 lg:px-8 py-6">
     <header>
         <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl my-8">{{ title }}</h1>
+        <div class="font-medium">
         {% include "partials/post-metadata.html" %}
-        {% if tags %}
-            <p id="tags-description" class="mt-8 text-lg font-medium text-pretty sm:text-xl/8">Tags this post has been filed under.</p>
-            <ul aria-describedby="tags-description">
-                {% for tag in tags %}
-                <li>
-                    <a href="/tag/{{tag | slugify }}">#{{ tag | title | replace(' ', '') }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+        </div>
+        <img src="{{ postImage.url }}" alt="{{ postImage.alt }}" class="my-6">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-x-4">
+                <img src="{{ author.image }}" alt="Image of {{ author.name }}" class="size-10 rounded-full">
+                <div class="text-sm/6">
+                    <p class="font-semibold">
+                        <a href=""><span class="absolute inset-0"></span>{{ author.name }}</a>
+                    </p>
+                    <p>{{ author.title }}</p>
+                </div>
+            </div>
+            {% if tags %}
+            <div>
+                <p id="tags-description" class="text-lg font-medium text-pretty sm:text-xl/8">Tags this post has been filed under.</p>
+                <ul aria-describedby="tags-description">
+                    {% for tag in tags %}
+                    <li>
+                        <a href="/tag/{{tag | slugify }}">#{{ tag | title | replace(' ', '') }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
     </header>
-    <div class="mt-8 text-lg text-pretty">
+    <div class="my-24 text-lg text-pretty max-w-4xl px-8">
         {{ content | safe }}
     </div>
     {% if additionalPosts %}
     <section>
         {% set postList = additionalPosts %}
-        <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">More from the Blog</h2>
+        <h2 class="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl my-12">More from the Blog</h2>
         {% include "partials/post-list.html" %}
     </section>
     {% endif %}
