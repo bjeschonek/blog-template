@@ -1,6 +1,6 @@
 {% if pagination.href.next or pagination.href.previous %}
 <div>
-    <nav aria-label="Pagination Links" class="flex space-x-2">
+    <nav aria-label="Pagination Links" class="flex space-x-6 justify-center">
         {% if pagination.href.previous %}
         <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" class="rounded-md bg-emerald-950 px-3.5 py-2.5 text-sm font-semibold shadow-xs hover:bg-emerald-700 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">
             <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
