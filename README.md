@@ -12,3 +12,15 @@ For example: if placing this in base.html
 the block that would be rendered if the file that references (extends) base does not have anything inside the block content. If the file that extends base has a block content, then the block content in base gets replaced completely. So in this case, base has a block content, then post will first have to extend base, and then post will need to have it's own block content section for anything to get rendered and this will replace the placeholder in base. 
 
 Two different ways to go about it, with block cotent being slightly more complex but allows for placeholder content. Either way will work. I suppose the decision to use one over the other is solely based on whether placeholder content is useful or not. 
+
+# TODO:
+1. RSS in footer links
+2. Make newsletter button mostly work
+3. Make about page
+4. Better pagination for blog page
+5. Find out why tags list isn't working
+6. Style tags links
+7. Figure out why MD on posts isn't rendering right
+8. Contact page validation/submit
+9. Add ability for post list for specific author
+10. IMAGE PROCESSING/RENDERING/PERFORMANCE
