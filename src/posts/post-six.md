@@ -7,6 +7,7 @@ author:
 postImage:
     alt: This is a placeholder image
     url: https://placehold.co/250
+tags: ['leadership']
 ---
 # This is another post on nothing at all
 
