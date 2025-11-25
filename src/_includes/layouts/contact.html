@@ -6,32 +6,46 @@ layout: layouts/base.html
         <h2 class="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Contact Us</h2>
         <p class="mt-2 text-lg/8">Fill out the form below to get in touch with us.</p>
     </div>
-    <form action="" method="POST" class="mx-auto mt-16 max-w-xl sm:mask-t-from-20">
+    <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
                 <label for="first-name" class="block text-sm/6 font-semibold">First Name</label>
                 <div class="mt-2 5">
-                    <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2">
+                    <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-950">
                 </div>
             </div>
             <div class="sm:col-span-2">
                 <label for="email" class="block text-sm/6 font-semibold">Email</label>
                 <div class="mt-2 5">
-                    <input type="email" id="email" autocomplete="email" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2">
+                    <input type="email" id="email" autocomplete="email" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-950">
                 </div>
             </div>
             <div class="sm:col-span-2">
                 <label for="phone-number" class="block text-sm/6 font-semibold">Phone Number</label>
                 <div class="mt-2 5">
-                    <input type="text" id="phone-number" name="phone-number" placeholder="123-456-7890" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base focus:outline-none sm:text-sm/6">
+                    <input type="text" id="phone-number" name="phone-number" placeholder="123-456-7890" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-950">
                 </div>
             </div>
             <div class="sm:col-span-2">
                 <label for="message" class="block text-sm/6 font-semibold">Message</label>
                 <div class="mt-2 5">
-                    <textarea name="message" id="message" rows="4" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2"></textarea>
+                    <textarea name="message" id="message" rows="4" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-emerald-950"></textarea>
                 </div>
             </div>
+            <div class="flex gap-x-4 sm:col-span-2">
+                <div class="flex h-6 items-center">
+                    <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-emerald-400 p-px inset-ring inset-ring-white/10 outline-offset-2 outline-emerald-950 transition-colors duration-200 ease-in-out has-checked:bg-emerald-950 has-focus-visible:outline-2">
+                        <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+                        <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to Policies" class="absolute inset-0 appearance-none focus:outline-hidden">
+                    </div>
+                </div>
+                <label for="agree-to-policies" class="text-sm/6">
+                    By selecting this, you agree to our <a href="/privacy" class="font-semibold whitespace-nowrap text-blue-500">privacy policy.</a>
+                </label>
+            </div>
+        </div>
+        <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md bg-emerald-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">Send Message</button>
         </div>
     </form>
 </section>
