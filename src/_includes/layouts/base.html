@@ -94,9 +94,9 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold uppercase underline">Content</h3>
+                    <h3 class="text-sm font-semibold uppercase underline">Site</h3>
                     <ul>
-                        {% set list = navigation.primary %}
+                        {% set list = navigation.footerLinks %}
                         {% include "partials/navigation.html" %}
                     </ul>
                 </div>
@@ -108,9 +108,9 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold uppercase underline">RSS & Legal</h3>
+                    <h3 class="text-sm font-semibold uppercase underline">Legal</h3>
                     <ul>
-                        {% set list = navigation.footerLinks %}
+                        {% set list = navigation.legalLinks %}
                         {% include "partials/navigation.html" %}
                     </ul>
                 </div>

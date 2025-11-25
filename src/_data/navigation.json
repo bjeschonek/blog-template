@@ -45,6 +45,23 @@
             "external": true
         }, 
         {
+            "text": "About",
+            "url": "/about/",
+            "external": false
+        },
+        {
+            "text": "Blog",
+            "url": "/blog/",
+            "external": false
+        },
+        {
+            "text": "Contact",
+            "url": "/contact/",
+            "external": false
+        }
+    ],
+    "legalLinks": [
+        {
             "text": "Terms",
             "url": "/terms",
             "external": true
