@@ -15,6 +15,7 @@ Two different ways to go about it, with block cotent being slightly more complex
 
 # TODO:
 1. RSS in footer links
+
 2. Make newsletter button mostly work
 3. Make about page
 4. Better pagination for blog page
