@@ -1,4 +1,4 @@
-export default function newsletterSubscribe() {
+export default function newsletterSubscribe () {
     const newsletterForm = document.querySelector('#newsletter-form');
     const emailAddress = document.querySelector('#newsletter-email-address');
     const subscribeBtn = document.querySelector('#email-subscribe-btn');
@@ -42,7 +42,7 @@ export default function newsletterSubscribe() {
 
     function isValidEmail(email) {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-        return emailRegex.text(email);
+        return emailRegex.test(email);
     }
 
     function showMessage(msg, type) {
