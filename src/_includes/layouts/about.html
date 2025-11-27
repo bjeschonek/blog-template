@@ -1,13 +1,13 @@
 ---
 layout: layouts/base.html
 ---
-<article>
+<article class="mx-auto max-w-7xl px-6 lg:px-8 py-6 h-full">
     <div>
-        <span>{{ title }}</span>
-        <h1>{{ headline }}</h1>
-        <p>{{ subHeadline }}</p>
+        <span class="font-semibold">{{ title }}</span>
+        <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl mt-2">{{ headline }}</h1>
+        <p class="text-xl max-w-xl mt-8">{{ subHeadline }}</p>
     </div>
-    <div>
+    <div class="py-12 max-w-2xl">
         {{ content | safe }}
     </div>
 </article>
