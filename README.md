@@ -16,8 +16,8 @@ Two different ways to go about it, with block cotent being slightly more complex
 # TODO:
 1. RSS in footer links
 2. Make newsletter button mostly work
-
 3. Make about page
+
 4. Better pagination for blog page
 5. Find out why tags list isn't working
 6. Style tags links
@@ -25,3 +25,4 @@ Two different ways to go about it, with block cotent being slightly more complex
 8. Contact page validation/submit
 9. Add ability for post list for specific author
 10. IMAGE PROCESSING/RENDERING/PERFORMANCE
+11. MOBILE MENU

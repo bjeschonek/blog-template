@@ -1,16 +1,27 @@
 {% if pagination.href.next or pagination.href.previous %}
-<div>
-    <nav aria-label="Pagination Links" class="flex space-x-6 justify-center">
+<nav aria-label="Page Links" class="flex space-x-6 justify-center">
+    <ul class="flex -space-x-px text-sm">
         {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" class="rounded-md bg-emerald-950 px-3.5 py-2.5 text-sm font-semibold shadow-xs hover:bg-emerald-700 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">
-            <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
-        </a>
+        <li>
+            <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 rounded-s-md focus:outline-none">
+                <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
+            </a>
+        </li>
         {% endif %}
+        {% for pageEntry in pagination.pages %}
+        <li>
+            <a href="{{ pagination.hrefs[ loop.index0 ]}}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 focus:outline-none">
+                <span>{{ loop.index }}</span>
+            </a>
+        </li>
+        {% endfor %}
         {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" class="rounded-md bg-emerald-950 px-3.5 py-2.5 text-sm font-semibold shadow-xs hover:bg-emerald-700 text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500">
-            <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
-        </a>
+        <li>
+            <a href="{{ pagination.href.next }}{{ paginationAnchor }}" class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 rounded-e-md focus:outline-none">
+                <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
+            </a>
+        </li>
         {% endif %}
-    </nav>
-</div>
+    </ul>
+</nav>
 {% endif %}
