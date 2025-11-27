@@ -1,3 +1,13 @@
 ---
 layout: layouts/base.html
 ---
+<article>
+    <div>
+        <span>{{ title }}</span>
+        <h1>{{ headline }}</h1>
+        <p>{{ subHeadline }}</p>
+    </div>
+    <div>
+        {{ content | safe }}
+    </div>
+</article>
