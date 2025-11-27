@@ -1,4 +1,4 @@
-export default function newsletterSubscribe () {
+export default function processNewsletterSignup () {
     const newsletterForm = document.querySelector('#newsletter-form');
     const emailAddress = document.querySelector('#newsletter-email-address');
     const subscribeBtn = document.querySelector('#email-subscribe-btn');
@@ -10,7 +10,7 @@ export default function newsletterSubscribe () {
         const email = emailAddress.value;
 
         if (!isValidEmail(email)) {
-            showMessage('Please enter a valid email address', 'error');
+            showMessage('Please enter a valid email address!', 'error');
             return;
         }
 
@@ -18,7 +18,7 @@ export default function newsletterSubscribe () {
         showMessage('Subscribing...', 'info');
 
         try {
-            const response = await fetch('', {
+            const response = await fetch('http://localhost:5173', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,14 +27,14 @@ export default function newsletterSubscribe () {
             });
 
             if (response.ok) {
-                showMessage('Subscription successful!', 'success');
+                showMessage('Subscription successful! Check your inbox to confirm your email address.', 'success');
                 emailAddress.value = '';
             } else {
                 const errorData = await response.json();
-                showMessage('Subscription Failed', 'error');
+                showMessage('Unable to subscribe!', 'error');
             }
         } catch (error) {
-            showMessage('An error occurred, pleaes try again.', 'error');
+            showMessage('An unknown error occurred, please try again.', 'error');
         } finally {
             subscribeBtn.disabled = false;
         }
@@ -47,7 +47,21 @@ export default function newsletterSubscribe () {
 
     function showMessage(msg, type) {
         messageDiv.textContent = msg;
-        messageDiv.className = type;
+
+        switch (type) {
+            case 'success':
+                messageDiv.style.backgroundColor = '#36FF61';
+                break;
+            case 'info': 
+                messageDiv.style.backgroundColor = '#85BFFF';
+                break;
+            case 'error':
+                messageDiv.style.backgroundColor = '#FF1F1F';
+                break;
+            default:
+                messageDiv.style.backgroundColor = '85BFFF';
+        }
+
         messageDiv.style.display = 'block';
     }
 }
