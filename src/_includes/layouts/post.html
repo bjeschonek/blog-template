@@ -23,11 +23,11 @@ layout: layouts/base.html
             </div>
             {% if tags %}
             <div>
-                <p id="tags-description" class="text-lg font-medium text-pretty sm:text-xl/8">Tags this post has been filed under.</p>
+                <p id="tags-description" class="text-lg font-medium text-pretty">Tags this post has been filed under.</p>
                 <ul aria-describedby="tags-description">
                     {% for tag in tags %}
                     <li>
-                        <a href="/tag/{{tag | slugify }}">#{{ tag | title | replace(' ', '') }}</a>
+                        <a href="/tags/{{tag | slugify }}/" class="hover:text-emerald-950 hover:underline">#{{ tag | title | replace(' ', '') }}</a>
                     </li>
                     {% endfor %}
                 </ul>

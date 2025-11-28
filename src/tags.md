@@ -5,6 +5,5 @@ pagination:
     data: collections
     size: 1
     alias: tag
-    filter: ['all']
-permalink: '/tag/{{ tag | slugify }}/'
+permalink: '/tags/{{ tag | slugify }}/'
 ---

@@ -3,7 +3,7 @@ title: All Blog Posts - Archive
 layout: layouts/blog.html
 pagination:
     data: collections.blog
-    size: 1
+    size: 10
 permalink: 'blog{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html'
 paginationPrevText: 'Previous'
 paginationNextText: 'Next'

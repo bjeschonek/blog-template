@@ -14,7 +14,7 @@ layout: layouts/base.html
         {{ content | safe }}
     </div>
     {% include "partials/post-list.html" %}
-    {% if not tags %}
+    {% if not tag %}
         {% include "partials/pagination.html" %}
     {% endif %}
 </div>
