@@ -1,27 +1,35 @@
-{% if pagination.href.next or pagination.href.previous %}
-<nav aria-label="Page Links" class="flex space-x-6 justify-center">
+<nav aria-label="Page Links" class="flex justify-center mt-12">
     <ul class="flex -space-x-px text-sm">
-        {% if pagination.href.previous %}
         <li>
-            <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 rounded-s-md focus:outline-none">
-                <span>{{ paginationPrevText if paginationPrevText else 'Previous' }}</span>
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" class="flex items-center justify-center bg-emerald-950 text-zinc-50 box-border border border-zinc-300 hover:bg-emerald-700 hover:text-zinc-300 font-medium text-sm p-3 rounded-s-xl focus:outline-none">
+                <span>{{ paginationPrevText }}</span>
             </a>
+            {% else %}
+            <span aria-label="No previous page" class="flex items-center justify-center bg-emerald-950 text-zinc-50 box-border border border-zinc-300 hover:bg-red-600 hover:text-zinc-300 font-medium text-sm p-3 rounded-s-xl focus:outline-none">Previous</span>
+            {% endif %}
         </li>
+        {% for everyPage in pagination.pages %}
+        {% if page.url == pagination.hrefs[ loop.index0 ] %}
+            {% set currentAttribute = 'aria-current="page"' %}
+            {% set paginationStyle = 'class="flex items-center justify-center bg-emerald-800 text-zinc-50 box-border border border-zinc-300 hover:bg-emerald-700 hover:text-zinc-300 font-medium text-sm px-4 py-3 focus:outline-none"' %}
+        {% else %}
+            {% set paginationStyle = 'class="flex items-center justify-center bg-emerald-950 text-zinc-50 box-border border border-zinc-300 hover:bg-emerald-700 hover:text-zinc-300 font-medium text-sm px-4 py-3 focus:outline-none"' %}
         {% endif %}
-        {% for pageEntry in pagination.pages %}
         <li>
-            <a href="{{ pagination.hrefs[ loop.index0 ]}}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 focus:outline-none">
+            <a href="{{ pagination.hrefs[ loop.index0 ]}}{{ paginationAnchor }}" {{ currentAttribute | safe }} {{ paginationStyle | safe }}>
                 <span>{{ loop.index }}</span>
             </a>
         </li>
         {% endfor %}
-        {% if pagination.href.next %}
         <li>
-            <a href="{{ pagination.href.next }}{{ paginationAnchor }}" class="flex items-center justify-center bg-zinc-500 text-zinc-300 box-border border border-zinc-500 hover:bg-zinc-400 hover:text-white font-medium text-sm w-9 h-9 rounded-e-md focus:outline-none">
-                <span>{{ paginationNextText if paginationNextText else 'Next' }}</span>
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}{{ paginationAnchor }}" class="flex items-center justify-center bg-emerald-950 text-zinc-50 box-border border border-zinc-300 hover:bg-emerald-700 hover:text-zinc-300 font-medium text-sm px-4 py-3 rounded-e-xl focus:outline-none">
+                <span>{{ paginationNextText }}</span>
             </a>
+            {% else %}
+            <span aria-label="No next page" class="flex items-center justify-center bg-emerald-950 text-zinc-50 box-border border border-zinc-300 hover:bg-red-600 hover:text-zinc-300 font-medium text-sm px-4 py-3 rounded-e-xl focus:outline-none">Next</span>
+            {% endif %}
         </li>
-        {% endif %}
     </ul>
 </nav>
-{% endif %}
