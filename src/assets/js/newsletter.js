@@ -17,6 +17,7 @@ export default function processNewsletterSignup () {
         subscribeBtn.disabled = true;
         showMessage('Subscribing...', 'info');
 
+        // Insert your own endpoint for the POST request
         try {
             const response = await fetch('http://localhost:5173', {
                 method: 'POST',

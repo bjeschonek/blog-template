@@ -28,6 +28,7 @@
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-vite": "^7.0.0",
     "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.22",
     "cssnano": "^7.1.2",
     "del-cli": "^7.0.0",
