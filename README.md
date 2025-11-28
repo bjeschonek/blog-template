@@ -20,8 +20,8 @@ Two different ways to go about it, with block cotent being slightly more complex
 4. Better pagination for blog page
 5. Find out why tags list isn't working
 6. Style tags links
-
 7. Figure out why MD on posts isn't rendering right
+
 8. Contact page validation/submit
 9. Add ability for post list for specific author
 10. IMAGE PROCESSING/RENDERING/PERFORMANCE
