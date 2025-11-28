@@ -1,3 +1,7 @@
 @import "tailwindcss";
 @source "../../../_site";
 @plugin "@tailwindcss/typography";
+
+.form-middle-name {
+    display: none;
+}
