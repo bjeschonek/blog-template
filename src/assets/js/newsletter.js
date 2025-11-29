@@ -1,8 +1,8 @@
 export default function processNewsletterSignup () {
     const newsletterForm = document.querySelector('#newsletter-form');
     const emailAddress = document.querySelector('#newsletter-email-address');
-    const subscribeBtn = document.querySelector('#email-subscribe-btn');
-    const messageDiv = document.querySelector('#newsletter-message');
+    const subscribeBtn = document.querySelector('#newsletter-subscribe-btn');
+    const messageDiv = document.querySelector('#newsletter-msg');
 
     newsletterForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -10,7 +10,7 @@ export default function processNewsletterSignup () {
         const email = emailAddress.value;
 
         if (!isValidEmail(email)) {
-            showMessage('Please enter a valid email address!', 'error');
+            showMessage('Error: Please enter a valid email address!', 'error');
             return;
         }
 
@@ -32,7 +32,7 @@ export default function processNewsletterSignup () {
                 emailAddress.value = '';
             } else {
                 const errorData = await response.json();
-                showMessage('Unable to subscribe!', 'error');
+                showMessage('Error: Unable to subscribe!', 'error');
             }
         } catch (error) {
             showMessage('An unknown error occurred, please try again.', 'error');
@@ -51,16 +51,16 @@ export default function processNewsletterSignup () {
 
         switch (type) {
             case 'success':
-                messageDiv.style.backgroundColor = '#36FF61';
+                messageDiv.style.color = '#36FF61';
                 break;
             case 'info': 
-                messageDiv.style.backgroundColor = '#85BFFF';
+                messageDiv.style.color = '#85BFFF';
                 break;
             case 'error':
-                messageDiv.style.backgroundColor = '#FF1F1F';
+                messageDiv.style.color = '#FF1F1F';
                 break;
             default:
-                messageDiv.style.backgroundColor = '85BFFF';
+                messageDiv.style.color = '85BFFF';
         }
 
         messageDiv.style.display = 'block';
