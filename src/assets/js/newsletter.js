@@ -1,21 +1,24 @@
-export default function processNewsletterSignup () {
+export default function handleNewsletterSubmit () {
+    const newsletterSignupSection = document.querySelector('#newsletter-signup');
     const newsletterForm = document.querySelector('#newsletter-form');
-    const emailAddress = document.querySelector('#newsletter-email-address');
-    const subscribeBtn = document.querySelector('#newsletter-subscribe-btn');
-    const messageDiv = document.querySelector('#newsletter-msg');
+    const newsletterEmail = document.querySelector('#newsletter-email');
+    const newsletterSubscribeBtn = document.querySelector('#newsletter-subscribe-btn');
+    const newsletterMessage = document.querySelector('#newsletter-msg');
+    const newsletterSuccess = document.querySelector('#newsletter-success');
+    const newsletterDismissBtn = document.querySelector('#newsletter-dismiss');
 
     newsletterForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const email = emailAddress.value;
+        const email = newsletterEmail.value;
 
         if (!isValidEmail(email)) {
             showMessage('Error: Please enter a valid email address!', 'error');
             return;
         }
 
-        subscribeBtn.disabled = true;
-        showMessage('Subscribing...', 'info');
+        newsletterSubscribeBtn.disabled = true;
+        showMessage('Attempting to subscribe...', 'info');
 
         // Insert your own endpoint for the POST request
         try {
@@ -28,17 +31,23 @@ export default function processNewsletterSignup () {
             });
 
             if (response.ok) {
-                showMessage('Subscription successful! Check your inbox to confirm your email address.', 'success');
+                newsletterSignupSection.style.display = 'hidden';
+                newsletterSuccess.style.display = 'block';
                 emailAddress.value = '';
             } else {
                 const errorData = await response.json();
                 showMessage('Error: Unable to subscribe!', 'error');
             }
         } catch (error) {
-            showMessage('An unknown error occurred, please try again.', 'error');
+            showMessage('An unexpected error occurred, please try again later.', 'error');
         } finally {
-            subscribeBtn.disabled = false;
+            newsletterSubscribeBtn.disabled = false;
         }
+    });
+
+    newsletterDismissBtn.addEventListener('click', () => {
+        newsletterSuccess.style.display = 'hidden';
+        newsletterSignupSection.style.display = 'block';
     });
 
     function isValidEmail(email) {
@@ -47,22 +56,19 @@ export default function processNewsletterSignup () {
     }
 
     function showMessage(msg, type) {
-        messageDiv.textContent = msg;
+        newsletterMessage.textContent = msg;
 
         switch (type) {
-            case 'success':
-                messageDiv.style.color = '#36FF61';
-                break;
             case 'info': 
-                messageDiv.style.color = '#85BFFF';
+                newsletterMessage.style.color = '#85BFFF';
                 break;
             case 'error':
-                messageDiv.style.color = '#FF1F1F';
+                newsletterMessage.style.color = '#FF1F1F';
                 break;
             default:
-                messageDiv.style.color = '85BFFF';
+                newsletterMessage.style.color = '85BFFF';
         }
 
-        messageDiv.style.display = 'block';
+        newsletterMessage.style.display = 'block';
     }
 }
