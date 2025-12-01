@@ -1,4 +1,4 @@
-export default function handleNewsletterSubmit () {
+export default function handleNewsletterSubmit() {
     const newsletterSignupSection = document.querySelector('#newsletter-signup');
     const newsletterForm = document.querySelector('#newsletter-form');
     const newsletterEmail = document.querySelector('#newsletter-email');
