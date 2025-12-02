@@ -3,12 +3,13 @@ import rssPlugin from '@11ty/eleventy-plugin-rss';
 import readingTime from 'eleventy-plugin-reading-time';
 import EleventyPluginVite from '@11ty/eleventy-plugin-vite';
 
-// Import Custom Filters
+// Import Custom Filters & Shortcodes
 import createReadableDate from './utils/filters/createReadableDate.js';
 import dateToIso from './utils/filters/dateToIso.js';
 import excerpt from './utils/filters/excerpt.js';
 import htmlDateString from './utils/filters/htmlDateString.js';
 import limitPosts from './utils/filters/limitPosts.js';
+import imageShortcode from './utils/shortcodes/imageShortcode.js';
 
 export default function (eleventyConfig) {
     // Set passthrough behavior for dev server to save time
@@ -33,6 +34,9 @@ export default function (eleventyConfig) {
     eleventyConfig.addFilter('excerpt', excerpt);
     eleventyConfig.addFilter('htmlDateString', htmlDateString);
     eleventyConfig.addFilter('limitPosts', limitPosts);
+
+    // Add Custom Shortcodes
+    eleventyConfig.addShortcode('image', imageShortcode);
 
     // Collection Definitions
     eleventyConfig.addCollection('blog', (collection) => {
