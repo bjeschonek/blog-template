@@ -8,6 +8,7 @@ export default function handleContactFormSubmission() {
     const messageTextInput = document.querySelector('#message');
     const contactSubmitBtn = document.querySelector('#contact-submit');
     const contactSuccessMsg = document.querySelector('#contact-success');
+    const contactError = document.querySelector('#contact-error');
 
     contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -19,32 +20,31 @@ export default function handleContactFormSubmission() {
         const messageText = messageTextInput.value;
 
         if (!isValidName(firstName)) {
-            showInfo('Please enter a valid first name.', 'error');
+            firstNameInput.setCustomValidity('Please enter a valid name (no numbers).');
             return;
         }
 
         if (!isValidName(lastName)) {
-            showInfo('Please enter a valid last name', 'error');
+            lastNameInput.setCustomValidity('Please enter a valid name (no numbers).');
             return;
         }
 
         if (!isValidEmail(email)) {
-            showInfo('Please enter a valid email address', 'error');
+            emailInput.setCustomValidity('Please enter a valid email address.');
             return;
         }
 
         if (!isValidPhone(phoneNumber)) {
-            showInfo('Please enter a valid phone number.', 'error');
+            phoneNumberInput.setCustomValidity('Please enter a valid phone number.');
             return;
         }
 
         if (!isValidMessage(messageText)) {
-            showInfo('Please enter a message', 'error');
+            messageTextInput.setCustomValidity('Please add a message.');
             return;
         }
 
         contactSubmitBtn.disabled = true;
-        showInfo('Attempting to send message...', 'info');
 
         try {
             const response = await fetch('http://localhost:5173', {
@@ -98,7 +98,7 @@ export default function handleContactFormSubmission() {
         return true;
     }
 
-    function showInfo() {
-
+    function showInfo(msg, type) {
+        contactError.textContent = msg;
     }
 }
