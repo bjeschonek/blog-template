@@ -2,7 +2,7 @@
 layout: layouts/base.html
 ---
 <section class="px-6 lg:px-8 py-24 sm:py-32">
-    <div class="mx-auto max-w-2xl text-center">
+    <div id="contact-heading" class="mx-auto max-w-2xl text-center">
         <h2 class="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Contact Us</h2>
         <p class="mt-2 text-lg/8">Fill out the form below to get in touch with us.</p>
     </div>
@@ -30,13 +30,13 @@ layout: layouts/base.html
             <div class="sm:col-span-2">
                 <label for="phone-number" class="block text-sm/6 font-semibold">Phone Number</label>
                 <div class="mt-2 5">
-                    <input type="tel" id="phone-number" name="phone-number" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-900">
+                    <input type="tel" maxlength="25" id="phone-number" name="phone-number" class="block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-900">
                 </div>
             </div>
             <div class="sm:col-span-2">
                 <label for="message" class="block text-sm/6 font-semibold">Message</label>
                 <div class="mt-2 5">
-                    <textarea name="message" id="message" rows="4" maxlength="500" required spellcheck placeholder="Add your message here..." onkeydown="countChars()" class="peer block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-900 user-invalid:outline-red-700 focus:user-invalid:outline-red-700"></textarea>
+                    <textarea name="message" id="message" rows="4" maxlength="500" required spellcheck placeholder="Add your message here..." onkeyup="countChars()" class="peer block w-full rounded-md px-3.5 py-2 text-base outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-neutral-900 user-invalid:outline-red-700 focus:user-invalid:outline-red-700"></textarea>
                     <p class="invisible peer-user-invalid:visible text-red-700">Please add a message so we know how we can help.</p>
                 </div>
                 <div aria-label="Message length, limit 500 characters">
@@ -66,7 +66,11 @@ layout: layouts/base.html
             </div>
         </div>
         <div class="mt-10">
-            <button type="submit" class="block w-full rounded-md bg-emerald-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 cursor-pointer">Send Message</button>
+            <button id="contact-submit" type="submit" class="block w-full rounded-md bg-emerald-950 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-emerald-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 cursor-pointer">Send Message</button>
         </div>
     </form>
+    <section id="contact-success" class="mx-auto max-w-2xl text-center border rounded-md p-6 hidden">
+        <h2 class="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">Thanks!</h2>
+        <p class="mt-2 text-lg/8">This is confirmation that your message was sent. Someone will be in touch with you soon.</p>
+    </section>
 </section>
