@@ -1,5 +1,5 @@
 export default function handleContactFormSubmission() {
-    const contactForm = document.querySelector('#contact-form');
+    const contactForm = document.getElementById('contact-form');
     const contactHeading = document.querySelector('#contact-heading');
     const firstNameInput = document.querySelector('#first-name');
     const lastNameInput = document.querySelector('#last-name');
